@@ -1,0 +1,41 @@
+body {
+    background-color: beige;
+}
+
+div {
+    text-align: center;
+    margin: 10px;
+}
+.computer-score {
+    border: 1px solid purple;
+}
+
+.player-score {
+    border: 1px solid purple;
+}
+
+.computer-card-container {
+    border: 1px solid purple;
+    height: 500px;
+}
+
+.player-card-container {
+    border: 1px solid purple;
+    height: 500px;
+}
+
+.hit-button {
+    text-align: center;
+}
+
+.stand-button {
+
+}
+
+.card {
+    width: 6em;
+    height: 8em;
+    display: inline-block;
+    border: 1px solid purple;
+    border-radius: 10px;
+}
