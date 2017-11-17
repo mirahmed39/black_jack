@@ -1,41 +1,118 @@
 body {
-    background-color: beige;
+    background-image: url("../images/background.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+h1 {
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+}
+
+form {
+    position: fixed;
+    top: 40%;
+    left: 30%;
+}
+
+form label {
+    color: white;
+    font-size: 2.2em;
+    font-family: 'Courgette', cursive;
+}
+
+form input {
+    border-radius: 20px;
+    font-size: 2em;
+    padding-left: 5px;
+}
+
+form input[type=submit] {
+    padding-left: 20px;
+    padding-right: 20px;
+    transition-timing-function: ease;
+    transition-duration: 0.4s;
+    font-family: 'Kalam', cursive;
+}
+
+form input[type=submit]:hover {
+    background-color: black;
+    color: white;
 }
 
 div {
     text-align: center;
     margin: 10px;
 }
+
+.game {
+    transition-timing-function: ease-in;
+    transition-duration: 0.5s;
+}
+
 .computer-score {
-    border: 1px solid purple;
+    color: white;
+    font-family: 'Marck Script', cursive;
+    font-size: 2em;
 }
 
 .player-score {
-    border: 1px solid purple;
+    color: white;
+    font-family: 'Marck Script', cursive;
+    font-size: 2em;
 }
 
-.computer-card-container {
-    border: 1px solid purple;
-    height: 500px;
-}
-
-.player-card-container {
-    border: 1px solid purple;
-    height: 500px;
-}
-
-.hit-button {
+.hit-button, .stand-button, .startover {
     text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition-timing-function: ease;
+    transition-duration: 0.4s;
+    font-family: 'Kalam', cursive;
+    border-radius: 20px;
+    font-size: 1.5em;
+    margin-right: 10px;
+    width: 200px;
 }
 
-.stand-button {
-
+.hit-button:hover, .stand-button:hover, .startover:hover {
+    background-color: black;
+    color: white;
 }
 
 .card {
+    text-align: left;
     width: 6em;
     height: 8em;
     display: inline-block;
-    border: 1px solid purple;
+    border: 0.5px solid black;
     border-radius: 10px;
+    font-size: 1.3em;
+    background-color: white;
+    padding-left: 10px;
+    padding-top: 5px;
+    margin-left: -50px;
+    transition: margin-left;
+    transition-duration: 1s;
+}
+
+.card:hover {
+    margin-left: 0;
+}
+
+.leftmost-card {
+    transition: margin-right;
+    transition-duration: 1s;
+}
+
+.leftmost-card:hover {
+    margin-right: 60px;
+}
+
+.result {
+    font-size: 2.3em;
+    font-family: 'Bad Script', cursive;
+    color: white;
+    font-weight: bold;
 }
