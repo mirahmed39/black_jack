@@ -85,9 +85,15 @@ function handlePlay(event) {
     resultDiv.appendChild(result);
 
     // finally adding a button which will start over the game onclick
-    const restartButton = game.appendChild(document.createElement('button'));
+    // also create a wrapper div to facilitate the text align
+    const restartButtonWrapper = document.createElement('div');
+    restartButtonWrapper.classList.add('restart-button-wrapper');
+    const restartButton = document.createElement('button');
+    restartButtonWrapper.appendChild(restartButton);
+    game.appendChild(restartButtonWrapper);
     restartButton.textContent = "Restart Game";
     restartButton.classList.add('startover');
+    restartButton.style.display = 'none';
 
     // showing the initial cards and score once the game begins
     addCard(computerCardContainer, "computer", card1);
@@ -114,7 +120,11 @@ function handlePlay(event) {
         addCard(playerCardContainer, "player", card);
         showPlayerScore();
         if(currentPlayerScore > GAME_VALUE) {
+            computerCards[1].style.backgroundImage = "none";
+            computerCards[1].style.color = "black";
+            showComputerScore();
             showResult("Computer");
+            handleButtonsOnGameEnd();
         }
     });
 
@@ -150,6 +160,7 @@ function handlePlay(event) {
         showComputerScore();
         computerCards[1].style.backgroundImage = "none";
         computerCards[1].style.color = "black";
+        handleButtonsOnGameEnd();
     });
     // handler for the restart button
     restartButton.addEventListener('click', function () {
@@ -272,4 +283,13 @@ function showResult(whoWon) {
         result.textContent = whoWon + " has won!!!";
     else
         result.textContent = "It's a tie!!!";
+}
+
+function handleButtonsOnGameEnd() {
+    const hitButton = document.getElementsByClassName('hit-button')[0];
+    const standButton = document.getElementsByClassName('stand-button')[0];
+    const restartButton = document.getElementsByClassName('startover')[0];
+    hitButton.style.display = "none";
+    standButton.style.display = "none";
+    restartButton.style.display = "inline-block";
 }
