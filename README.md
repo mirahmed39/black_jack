@@ -1,2 +1,4 @@
-This is homework 7 repository.
-EXTRA CREDIT: Reset Hand (5 points)
+## Black Jack
+
++ A client side javascript application that implements the popular game called "Black Jack". One special aspect of this program
+is that all DOM elements are created **dynamically/programatically**
